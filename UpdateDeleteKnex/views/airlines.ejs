@@ -1,0 +1,69 @@
+<style>
+   
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+tbody td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Button style */
+button {
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Placeholder style */
+h3 {
+  color: #777;
+  font-style: italic;
+  margin-top: 16px;
+}
+</style>
+
+<div class=airlines>
+    <% if (typeof airlines !== 'undefined' && airlines) { %>
+        <table>
+            <thead>
+              <tr>
+                <th>Airline</th>
+                <th>Country</th>
+                <!-- Add more table headings as needed -->
+              </tr>
+            </thead>
+            <tbody>
+              <% airlines.forEach((airline) => { %>
+                <tr>
+                  <td><%= airline.Name %></td>
+                  <td><%= airline.Country_Id %></td>
+                  <!-- Add more table cells with relevant airline properties -->
+                  <td><button>update</button></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+    <% } else {%>
+               <h3>there is no airlines to show</h3> 
+        <% } %>
+</div>
